@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <title>Basic jQuery Webpage</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script>
+        $(function () {
+            var progressbar = $("#progressbar"),
+                progressLabel = $(".progress-label");
+
+            progressbar.progressbar({
+                value: false,
+                change: function () {
+                    progressLabel.text(progressbar.progressbar("value") + "%");
+                },
+                complete: function () {
+                    progressLabel.text("Complete!");
+                }
+            });
+
+            function progress() {
+                var val = progressbar.progressbar("value") || 0;
+
+                progressbar.progressbar("value", val + 2);
+
+                if (val < 99) {
+                    setTimeout(progress, 80);
+                }
+            }
+
+            setTimeout(progress, 2000);
+        });
+    </script>
+
+    <style>
+        html {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        #urgrand {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #urmom {
+            display: flex;
+            margin-top: 10px;
+
+        }
+
+        #progressbar {
+            width: 15%;
+            margin-top: 20px;
+            height: 21px;
+        }
+
+        .ui-progressbar {
+            position: relative;
+            color: green;
+            border: black 1px;
+
+        }
+
+        .progress-label {
+            position: absolute;
+            top: 4px;
+            font-weight: bold;
+        }
+
+        #progressbar .ui-progressbar-value {
+            background-color: black;
+        }
+
+        #datepicker {
+            height: 15px;
+            margin: 15px 0px 0px 5px;
+        }
+
+        #accordion {
+
+            width: 400px;
+            height: 340px;
+            background-color: black;
+
+        }
+
+        #accordion {
+
+            background-color: black;
+
+        }
+
+
+        #fallout3 {
+            width: 516px;
+        }
+
+        #fallout4 {
+
+            width: 516px;
+            height: 700px;
+
+
+        }
+
+        #fallout-armour {
+
+            width: 516px;
+            height: 385px;
+
+        }
+
+        #content {
+            width: 400px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 40px;
+
+        }
+
+        .footer {
+            margin-left: 615px;
+
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="urgrand">
+        <div id="urmom">
+            <p>Date:</p><br>
+            <input type="text" id="datepicker">
+        </div>
+        <h1>FALLOUT</h1>
+        <div id="progressbar">
+            <div class="progress-label">Loading...</div>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div>
+            <img src="Images/fallout 3.jpg" id="fallout3">
+            <img src="Images/fallout armour.jpg" id="fallout-armour">
+        </div>
+        <div id="accordion">
+            <h3>Background</h3>
+            <div>
+                <p>
+                    Fallout is a series of post-apocalyptic role-playing video games—and later action role-playing
+                    games—created by Interplay Entertainment. The series is set during the 21st, 22nd and 23rd
+                    centuries, and its atompunk retrofuturistic setting and art work are influenced by the post-war
+                    culture of 1950s United States, with its combination of hope for the promises of technology and the
+                    lurking fear of nuclear annihilation. A forerunner of Fallout is Wasteland, a 1988 game developed by
+                    Interplay Productions to which the series is regarded as a spiritual successor.
+                </p>
+            </div>
+            <h3> Development</h3>
+            <div>
+                <p>
+                    The series' first title, Fallout, was developed by Black Isle Studios and released in 1997, and its
+                    sequel, Fallout 2, the following year. With the tactical role-playing game Fallout Tactics:
+                    Brotherhood of Steel, development was handed to Micro Forté and 14 Degrees East. In 2004, Interplay
+                    closed Black Isle Studios, and continued to produce Fallout: Brotherhood of Steel, an action game
+                    with role-playing elements for the PlayStation 2 and Xbox, without Black Isle Studios. Fallout 3,
+                    the third entry in the main series, was released by Bethesda Softworks, and was followed by Fallout:
+                    New Vegas, developed by Obsidian Entertainment. Fallout 4 was released in 2015, and Fallout 76
+                    released on November 14, 2018.
+                </p>
+            </div>
+            <h3>Ownership</h3>
+            <div>
+                <p>
+                    Bethesda Softworks owns the rights to the Fallout intellectual property.After acquiring it, Bethesda
+                    licensed the rights to make a massively multiplayer online role-playing game (MMORPG) version of
+                    Fallout to Interplay. The MMORPG got as far as beta stage under Interplay, but a lengthy legal
+                    dispute between Bethesda Softworks and Interplay halted the development of the game and led to its
+                    eventual cancellation, as Bethesda claimed in court that Interplay had not met the terms and
+                    conditions of the licensing contract. The case was settled in early 2012.
+                </p>
+            </div>
+            <h3>What is Fallout?</h3>
+            <div>
+                <p>
+                    The ideas of the Fallout series began with Interplay Productions' Wasteland, released in 1988. At
+                    that time, Interplay was not a publisher and used Electronic Arts for distribution of the game.
+                    According to Interplay's founder, Brian Fargo, they wanted to explore a post-apocalyptic setting and
+                    created Wasteland for that. Sometime after release, Interplay decided to shift focus and become a
+                    publisher while still developing games. Fargo wanted to continue to use the Wasteland intellectual
+                    property but could not negotiate the rights back from Electronic Arts. Still wanting to do something
+                    in a post-apocalyptic setting, Fargo and his team decided to make a new setting and game. They
+                    determined what aspects of Wasteland were positives and wrote and developed a new game around them.
+                    The result was the first Fallout games, which released nearly ten years after Wasteland.
+                </p>
+            </div>
+        </div>
+        <img src="Images/fallout 4.jpg" id="fallout4">
+    </div>
+
+    <div class="footer">Copyrigth All rights Reserved @2022</div>
+
+
+</body>
+
+</html>
